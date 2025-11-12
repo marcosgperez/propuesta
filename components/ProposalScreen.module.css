@@ -1,0 +1,295 @@
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-in;
+}
+
+.successCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 251, 230, 0.98) 100%);
+}
+
+.heartIcon {
+  color: #f59e0b;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.question {
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.yesBtn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  padding: 15px 50px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+  min-width: 150px;
+}
+
+.yesBtn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 25px rgba(16, 185, 129, 0.6);
+}
+
+.noBtn {
+  background: #f0f0f0;
+  color: #666;
+  border: 2px solid #ddd;
+  padding: 15px 50px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s;
+  min-width: 150px;
+}
+
+.noBtn:hover {
+  background: #e0e0e0;
+  border-color: #ccc;
+  transform: translateY(-2px);
+}
+
+.successTitle {
+  color: #10b981;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  animation: bounceIn 0.8s ease-out;
+}
+
+.successMessage {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.successSubtext {
+  color: #f59e0b;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Modal styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  width: 100%;
+  animation: slideUp 0.3s ease-out;
+  transition: background-color 0.3s ease;
+}
+
+
+.modalContent {
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.modalTitle {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+
+.modalError {
+  background: rgba(251, 191, 36, 0.8);
+  animation: shake 0.5s, errorPulse 0.5s;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.modalYesBtn {
+  background: #f0f0f0;
+  color: #666;
+  border: 2px solid #ddd;
+  padding: 12px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.modalYesBtn:hover {
+  background: #e0e0e0;
+  border-color: #ccc;
+}
+
+.modalNoBtn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+.modalNoBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(1.1);
+  }
+  20%, 40% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { 
+    transform: translateX(0); 
+  }
+  10%, 30%, 50%, 70%, 90% { 
+    transform: translateX(-10px); 
+  }
+  20%, 40%, 60%, 80% { 
+    transform: translateX(10px); 
+  }
+}
+
+@keyframes errorPulse {
+  0% {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 20px 60px rgba(251, 191, 36, 0.6), 0 0 30px rgba(251, 191, 36, 0.4);
+  }
+  100% {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .question {
+    font-size: 2rem;
+  }
+  
+  .buttonContainer {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .yesBtn,
+  .noBtn {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+  
+  .successTitle {
+    font-size: 2.5rem;
+  }
+  
+  .successMessage {
+    font-size: 1.2rem;
+  }
+  
+  .modalTitle {
+    font-size: 1.5rem;
+  }
+  
+  .modalButtons {
+    flex-direction: column;
+  }
+  
+  .modalYesBtn,
+  .modalNoBtn {
+    width: 100%;
+  }
+}
