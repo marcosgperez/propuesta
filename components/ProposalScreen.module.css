@@ -2,6 +2,10 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  max-height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .card {
@@ -11,6 +15,9 @@
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   animation: fadeIn 0.5s ease-in;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
 }
 
 .successCard {
@@ -257,31 +264,63 @@
 
 /* Responsive */
 @media (max-width: 576px) {
+  .container {
+    padding: 0;
+  }
+
+  .card {
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .heartIcon {
+    margin-bottom: 20px;
+  }
+
+  .heartIcon svg {
+    width: 60px;
+    height: 60px;
+  }
+
   .question {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    margin-bottom: 30px;
   }
   
   .buttonContainer {
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
   }
   
   .yesBtn,
   .noBtn {
     width: 100%;
     font-size: 1.1rem;
+    padding: 12px 40px;
   }
   
   .successTitle {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 15px;
   }
-  
+
   .successMessage {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .successSubtext {
+    font-size: 1.5rem;
   }
   
   .modalTitle {
     font-size: 1.5rem;
+  }
+
+  .modalContent {
+    padding: 30px 25px;
   }
   
   .modalButtons {
